@@ -1,0 +1,347 @@
+/* reset */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    
+}
+
+
+
+.header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 4px solid tomato;
+    border-bottom: 4px solid tomato;
+    
+}
+
+/* estilo menu */
+.menu{
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;  
+}
+
+.menu ul{
+    display: flex;
+    gap: 10px;
+    margin-right: 5px;
+}
+
+/* estilos botones */
+.menu ul li{
+    background-color: tomato;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    padding: 7px;
+    border-radius: 15px;
+    box-shadow: 2px 2px black;
+    
+    
+    
+}
+
+/* estilos logo */
+.logo{
+    width: 10rem;
+    top: 4px;
+    z-index: 3;
+}
+
+.ig{
+    height: 20px;
+}
+
+.fb{
+    height: 20px;
+}
+
+/* grid main */
+.contenedorPrincipalMain{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "presentacion"
+                         "main"
+                         "lorem"
+                         "footer";
+}
+
+.presentacion{
+    background-image: url(/assets/guirnaldasPrincipal.jpg);
+    height: 600px;
+    grid-area: presentacion;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+.presentacion p{
+    position: absolute;
+    
+}
+
+/* estilos texto nosotros home (Ruta especificidad) */
+.mainIndex{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.main__img{
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border: 1px solid red; */
+    display: grid;
+    background-color: black;
+    grid-template-areas: "foto1 foto2 foto3"
+                         "foto1 foto4 foto5";
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.foto1{
+    grid-area: foto1;
+    
+}
+.foto2{
+    grid-area: foto2;
+}
+.fotoChica1{
+    grid-area: foto3;
+}
+.fotoChica2{
+    grid-area: foto4;
+}
+.fotoChica3{
+    grid-area: foto5;
+}
+
+.lorem{
+    grid-area: lorem;
+    margin: 2rem;
+    text-align: center;
+}
+
+/* estilos footer */
+.footer{
+    grid-area: footer;
+    background-color: black;
+    margin-top: 4rem;
+    color: tomato;
+    text-align: center;
+}
+.footer a{
+    color: aliceblue;
+    margin-left: 20px;
+    
+}
+
+/* media queries mobile */
+@media screen and (max-width: 800px){
+    .menu ul li{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 11px;
+    }
+    .logo{
+        display: none;
+    }
+    .presentacion{
+        display: flex;
+        font-size: 1.3rem;
+        font-weight: bold;
+        width: 50%;
+    }
+    .main__img{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .lorem p{
+        display: flex;
+        font-size: 1.3rem;
+        width: 50%;
+    }
+    .footer{
+        display: flex;
+    }
+    .footer p{
+        margin-left: 100px;
+    }
+} 
+
+
+
+/* estilos HTML PRODUCTOS */
+
+.mainProductos{
+    background-color: white;
+    background-size: 100%;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.prodGuir{
+    margin-bottom: 3rem;
+}
+
+.prodNeon{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 1024px){
+    .mainProductos{
+        display: grid;
+        grid-template-areas: "prodGuir prodGuir prodGuir"
+                             "guirVintage guirLed guirPera"
+                             "prodNeon prodNeon prodNeon"
+                             "neonTigre neonEmoji neonHelado";
+    }
+}
+
+.prodGuir{
+    grid-area: prodGuir;
+}
+.guirVintage{
+    grid-area: guirVintage;
+}
+.guirLed{
+    grid-area: guirLed;
+}
+.guirPera{
+    grid-area: guirPera;
+}
+
+.prodNeon{
+    grid-area: prodNeon;
+}
+
+/* tipos de productos */
+
+.tituloProductos{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* nombre del producto */
+.mainProductos div h2{
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+/* descripcion del producto */
+
+.mainProductos div h3{
+    margin-bottom: 20px;
+}
+
+.mainProductos div h4{
+    margin-bottom: 20px;
+}
+
+.mainProductos div p{
+    margin-bottom: 20px;
+}
+
+/* estilos HTML INFOMRACION TECNICA */
+
+@media screen and (min-width: 1024px){
+    .mainInfoTecnica{
+        display: grid;
+        grid-template-areas: "tecnicaGuir tecnicaNeon tecnicaLuminaria";
+    }
+}
+.tecnicaGuir{
+    grid-area: tecnicaGuir;
+}
+.tecnicaNeon{
+    grid-area: tecnicaNeon;
+}
+tecnicaLuminarias{
+    grid-area: tecnicaLuminarias;
+}
+
+.tituloInfoTecnica{
+    margin: 10px;
+    margin-top: 20px;
+}
+
+/* titulos de productos informacion tecnica */
+
+.mainInfoTecnica h2{
+    margin: 20px;
+}
+
+
+/* descripcion de informacion tecnica */
+.mainInfoTecnica p{
+    margin-left: 20px; 
+}
+.divEspacioInfoTecnica{
+    margin: 550px;
+}
+
+/* estilos HTML NOSOTROS */
+@media screen and (min-width: 1024px){
+    .nuestrosTrabajos{
+        display: grid;
+        grid-template-areas: "titulo titulo titulo"
+        "nomicom jordan hamburguesa";
+    }
+}
+
+.nosotros{
+    margin: 20px;
+}
+.tituloTrabajos{
+    grid-area: titulo;
+    margin: 2em;
+}
+.nomicom{
+    grid-area: nomicom;
+    display: flex;
+    width: 100%;
+}
+.jordan{
+    grid-area: jordan;
+    display: flex;
+    width: 100%;
+}
+.hamburguesa{
+    grid-area: hamburguesa;
+    display: flex;
+    width: 100%;
+}
+
+/* estilos HTML CONSULTA */
+
+.formularioConsulta{
+    text-align: center;
+    margin-top: 250px;
+    margin-bottom: 468px;
+    background-color: bisque;
+}
+
+
+
+
