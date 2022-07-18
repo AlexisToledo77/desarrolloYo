@@ -50,6 +50,12 @@
     
 }
 
+/* animaciones nuevas */
+
+header: :hover{
+    color: green;
+}
+
 /* estilos logo */
 .logo{
     width: 10rem;
